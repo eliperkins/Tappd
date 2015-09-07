@@ -1,0 +1,7 @@
+included:
+  - Tappd
+excluded:
+  - Carthage
+  - Example
+  - ExampleUITests
+  - TappdTests
