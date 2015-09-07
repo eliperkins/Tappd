@@ -1,5 +1,5 @@
-github "Alamofire/Alamofire" "swift-2.0"
 github "thoughtbot/argo" "td-swift-2"
 github "thoughtbot/Curry" ~> 1.1
 github "antitypical/Result" ~> 0.6
+github "thoughtbot/Swish" "master"
 

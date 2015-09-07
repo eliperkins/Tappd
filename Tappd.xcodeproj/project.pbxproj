@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		266BEE0A1B9C892200AD39B0 /* Swish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266BEE091B9C892200AD39B0 /* Swish.framework */; settings = {ASSET_TAGS = (); }; };
+		266BEE0C1B9CD46200AD39B0 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266BEE0B1B9CD46200AD39B0 /* Requests.swift */; settings = {ASSET_TAGS = (); }; };
+		266BEE0F1B9DF60C00AD39B0 /* Swish.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 266BEE091B9C892200AD39B0 /* Swish.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2698F7711B921CEC004A899C /* Curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26C161E81B920D22006D3BBE /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2698F7721B921CEC004A899C /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26C161D71B92094D006D3BBE /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2698F7731B921CEC004A899C /* Argo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26C161D81B92094D006D3BBE /* Argo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26C161C11B92085C006D3BBE /* Tappd.h in Headers */ = {isa = PBXBuildFile; fileRef = 26C161C01B92085C006D3BBE /* Tappd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26C161C81B92085C006D3BBE /* Tappd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C161BD1B92085C006D3BBE /* Tappd.framework */; settings = {ASSET_TAGS = (); }; };
 		26C161CD1B92085C006D3BBE /* ClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C161CC1B92085C006D3BBE /* ClientTests.swift */; };
-		26C161D91B92094D006D3BBE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C161D71B92094D006D3BBE /* Alamofire.framework */; };
 		26C161DA1B92094D006D3BBE /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C161D81B92094D006D3BBE /* Argo.framework */; };
 		26C161DD1B92097B006D3BBE /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C161DC1B92097B006D3BBE /* Client.swift */; settings = {ASSET_TAGS = (); }; };
 		26C161DF1B920982006D3BBE /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C161DE1B920982006D3BBE /* Beer.swift */; settings = {ASSET_TAGS = (); }; };
@@ -24,7 +25,6 @@
 		26C161E91B920D22006D3BBE /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C161E81B920D22006D3BBE /* Curry.framework */; };
 		26C161EB1B920EEB006D3BBE /* ArgoExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C161EA1B920EEB006D3BBE /* ArgoExtensions.swift */; settings = {ASSET_TAGS = (); }; };
 		26F14E5C1B9221DD00C1C6C3 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F14E5B1B9221DD00C1C6C3 /* Result.framework */; };
-		26F14E5E1B9222BC00C1C6C3 /* BeerResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F14E5D1B9222BC00C1C6C3 /* BeerResult.swift */; settings = {ASSET_TAGS = (); }; };
 		26F14E5F1B9225FC00C1C6C3 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26F14E5B1B9221DD00C1C6C3 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26F14E611B9227D200C1C6C3 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F14E601B9227D200C1C6C3 /* Search.swift */; settings = {ASSET_TAGS = (); }; };
 		26F14E691B93F54300C1C6C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F14E681B93F54300C1C6C3 /* AppDelegate.swift */; };
@@ -36,7 +36,6 @@
 		26F14E861B93F58000C1C6C3 /* Tappd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C161BD1B92085C006D3BBE /* Tappd.framework */; };
 		26F14E871B93F58800C1C6C3 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F14E5B1B9221DD00C1C6C3 /* Result.framework */; };
 		26F14E881B93F58800C1C6C3 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C161E81B920D22006D3BBE /* Curry.framework */; };
-		26F14E891B93F58800C1C6C3 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C161D71B92094D006D3BBE /* Alamofire.framework */; };
 		26F14E8A1B93F58800C1C6C3 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C161D81B92094D006D3BBE /* Argo.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,9 +64,9 @@
 			dstSubfolderSpec = 10;
 			files = (
 				2698F7711B921CEC004A899C /* Curry.framework in Embed Frameworks */,
-				2698F7721B921CEC004A899C /* Alamofire.framework in Embed Frameworks */,
 				2698F7731B921CEC004A899C /* Argo.framework in Embed Frameworks */,
 				26F14E5F1B9225FC00C1C6C3 /* Result.framework in Embed Frameworks */,
+				266BEE0F1B9DF60C00AD39B0 /* Swish.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,13 +74,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		266BEE091B9C892200AD39B0 /* Swish.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swish.framework; path = Carthage/Build/iOS/Swish.framework; sourceTree = "<group>"; };
+		266BEE0B1B9CD46200AD39B0 /* Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		26C161BD1B92085C006D3BBE /* Tappd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Tappd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C161C01B92085C006D3BBE /* Tappd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tappd.h; sourceTree = "<group>"; };
 		26C161C21B92085C006D3BBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26C161C71B92085C006D3BBE /* TappdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TappdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C161CC1B92085C006D3BBE /* ClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTests.swift; sourceTree = "<group>"; };
 		26C161CE1B92085C006D3BBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26C161D71B92094D006D3BBE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		26C161D81B92094D006D3BBE /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/iOS/Argo.framework; sourceTree = "<group>"; };
 		26C161DC1B92097B006D3BBE /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		26C161DE1B920982006D3BBE /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
@@ -92,7 +92,6 @@
 		26C161E81B920D22006D3BBE /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/iOS/Curry.framework; sourceTree = "<group>"; };
 		26C161EA1B920EEB006D3BBE /* ArgoExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArgoExtensions.swift; sourceTree = "<group>"; };
 		26F14E5B1B9221DD00C1C6C3 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
-		26F14E5D1B9222BC00C1C6C3 /* BeerResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerResult.swift; sourceTree = "<group>"; };
 		26F14E601B9227D200C1C6C3 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		26F14E661B93F54300C1C6C3 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F14E681B93F54300C1C6C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,8 +110,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26C161D91B92094D006D3BBE /* Alamofire.framework in Frameworks */,
 				26C161DA1B92094D006D3BBE /* Argo.framework in Frameworks */,
+				266BEE0A1B9C892200AD39B0 /* Swish.framework in Frameworks */,
 				26F14E5C1B9221DD00C1C6C3 /* Result.framework in Frameworks */,
 				26C161E91B920D22006D3BBE /* Curry.framework in Frameworks */,
 			);
@@ -133,7 +132,6 @@
 				26F14E861B93F58000C1C6C3 /* Tappd.framework in Frameworks */,
 				26F14E871B93F58800C1C6C3 /* Result.framework in Frameworks */,
 				26F14E881B93F58800C1C6C3 /* Curry.framework in Frameworks */,
-				26F14E891B93F58800C1C6C3 /* Alamofire.framework in Frameworks */,
 				26F14E8A1B93F58800C1C6C3 /* Argo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,8 +181,8 @@
 				26C161E41B9209AD006D3BBE /* User.swift */,
 				26C161E61B9209BC006D3BBE /* Checkin.swift */,
 				26C161EA1B920EEB006D3BBE /* ArgoExtensions.swift */,
-				26F14E5D1B9222BC00C1C6C3 /* BeerResult.swift */,
 				26F14E601B9227D200C1C6C3 /* Search.swift */,
+				266BEE0B1B9CD46200AD39B0 /* Requests.swift */,
 			);
 			path = Tappd;
 			sourceTree = "<group>";
@@ -201,9 +199,9 @@
 		26C161DB1B92095A006D3BBE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				266BEE091B9C892200AD39B0 /* Swish.framework */,
 				26F14E5B1B9221DD00C1C6C3 /* Result.framework */,
 				26C161E81B920D22006D3BBE /* Curry.framework */,
-				26C161D71B92094D006D3BBE /* Alamofire.framework */,
 				26C161D81B92094D006D3BBE /* Argo.framework */,
 			);
 			name = Frameworks;
@@ -407,7 +405,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Curry.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Swish.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Argo.framework",
 			);
 			name = "Embed Carthage Frameworks";
@@ -425,8 +423,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				26F14E611B9227D200C1C6C3 /* Search.swift in Sources */,
-				26F14E5E1B9222BC00C1C6C3 /* BeerResult.swift in Sources */,
 				26C161EB1B920EEB006D3BBE /* ArgoExtensions.swift in Sources */,
+				266BEE0C1B9CD46200AD39B0 /* Requests.swift in Sources */,
 				26C161DD1B92097B006D3BBE /* Client.swift in Sources */,
 				26C161E31B92099C006D3BBE /* Venue.swift in Sources */,
 				26C161E11B920989006D3BBE /* Brewery.swift in Sources */,

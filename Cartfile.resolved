@@ -1,4 +1,4 @@
-github "Alamofire/Alamofire" "1bc35abfa7c167ba54af4e87158af7945cc9984e"
-github "thoughtbot/Curry" "v1.1.0"
+github "thoughtbot/Curry" "v1.1.1"
 github "antitypical/Result" "0.6-beta.1"
 github "thoughtbot/argo" "70461918a0cb3e862c38c99764f09827e607f008"
+github "thoughtbot/Swish" "51ed691262fc09fcf65ccc7067ea9dfb1ba774c7"

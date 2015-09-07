@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import Alamofire
 import Argo
 import Result
+import Swish
 
 public typealias AccessToken = String
 
@@ -21,7 +21,9 @@ public struct Client {
     
     public let authentication: Authentication
     
-    private static var authCompletion: (ClientResult -> Void)?
+    private static var authCompletion: (Result<Client, AuthError> -> Void)?
+    
+    let client = APIClient()
     
     public init(accessToken: AccessToken) {
         self.authentication = .AccessToken(accessToken)
@@ -31,7 +33,7 @@ public struct Client {
         self.authentication = .ClientKeyAndSecret(clientKey, clientSecret)
     }
     
-    public static func clientFromWebAuth(clientKey: String, redirectURL: NSURL, completion: (ClientResult -> Void)) {
+    public static func clientFromWebAuth(clientKey: String, redirectURL: NSURL, completion: (Result<Client, AuthError> -> Void)) {
         // https://untappd.com/oauth/authenticate/?client_id=CLIENTID&response_type=token&redirect_url=REDIRECT_URL
         let URLString = "https://untappd.com/oauth/authenticate/?client_id=\(clientKey)&response_type=token&redirect_url=\(redirectURL.absoluteString)"
         guard let URL = NSURL(string: URLString) else { return }
@@ -60,69 +62,71 @@ public struct Client {
         case .ClientKeyAndSecret(let key, let secret): return ["client_id" : key, "client_secret" : secret]
         }
     }
+//    
+//    public func fetchBeer(id: Int, completion: (Result<Beer, APIError> -> Void)) -> NSURLRequest {
+//        let URLString = "https://api.untappd.com/v4/beer/info/\(id)"
+//        let URL = Result(NSURL(string: URLString), failWith: APIError.GenericError(NSError(domain: "com.tappd.client", code: 100, userInfo: nil)))
+//        let request = client.performRequest(<#T##request: T##T#>, completionHandler: <#T##Result<T.ResponseType, NSError> -> Void#>)
+//        let request = Alamofire.request(.GET, URLString, parameters: defaultParameters, encoding: .URL, headers: nil)
+//        
+//        request.responseJSON { (request, response, result) -> Void in
+//            switch result {
+//            case .Success(let JSON):
+//                guard let responseData = JSON["response"] as? [String:AnyObject], beerData = responseData["beer"] as? [String:AnyObject] else {
+//                    let failureReason = "JSON could not be serialized because input data was nil."
+//                    let error = Error.errorWithCode(.JSONSerializationFailed, failureReason: failureReason)
+//                    completion(.Failure(.AlamofireError(error)))
+//                    break
+//                }
+//                let beer: Decoded<Beer> = decode(beerData)
+//                switch beer {
+//                case .Success(let beer):
+//                    completion(.Success(beer))
+//                case .MissingKey(let failureReason):
+//                    completion(.Failure(.ArgoError(failureReason)))
+//                case .TypeMismatch(let failureReason):
+//                    completion(.Failure(.ArgoError(failureReason)))
+//                }
+//            case .Failure(let (_, error)):
+//                completion(.Failure(.GenericError(error)))
+//            }
+//        }
+//        
+//        return request
+//    }
     
-    public func fetchBeer(id: Int, completion: (BeerResult -> Void)) -> Request {
-        let URLString = "https://api.untappd.com/v4/beer/info/\(id)"
-        let request = Alamofire.request(.GET, URLString, parameters: defaultParameters, encoding: .URL, headers: nil)
-        
-        request.responseJSON { (request, response, result) -> Void in
-            switch result {
-            case .Success(let JSON):
-                guard let responseData = JSON["response"] as? [String:AnyObject], beerData = responseData["beer"] as? [String:AnyObject] else {
-                    let failureReason = "JSON could not be serialized because input data was nil."
-                    let error = Error.errorWithCode(.JSONSerializationFailed, failureReason: failureReason)
-                    completion(.Failure(.AlamofireError(error)))
-                    break
-                }
-                let beer: Decoded<Beer> = decode(beerData)
-                switch beer {
-                case .Success(let beer):
-                    completion(.Success(beer))
-                case .MissingKey(let failureReason):
-                    completion(.Failure(.ArgoError(failureReason)))
-                case .TypeMismatch(let failureReason):
-                    completion(.Failure(.ArgoError(failureReason)))
-                }
-            case .Failure(let (_, error)):
-                completion(.Failure(.GenericError(error)))
-            }
-        }
-        
-        return request
-    }
-    
-    public func searchBeer(query: String, completion: (SearchResultsResult -> Void)) -> Request {
-        let URLString = "https://api.untappd.com/v4/search/beer"
-        var parameters = defaultParameters
-        parameters["q"] = query
-        
-        let request = Alamofire.request(.GET, URLString, parameters: parameters, encoding: .URL, headers: nil)
-        
-        request.responseJSON { (request, response, result) -> Void in
-            switch result {
-            case .Success(let JSON):
-                guard let responseData = JSON["response"] as? [String:AnyObject] else {
-                    let failureReason = "JSON could not be serialized because input data was nil."
-                    let error = Error.errorWithCode(.JSONSerializationFailed, failureReason: failureReason)
-                    completion(.Failure(.AlamofireError(error)))
-                    break
-                }
-                let beer: Decoded<SearchResults> = decode(responseData)
-                switch beer {
-                case .Success(let searchResults):
-                    completion(.Success(searchResults))
-                case .MissingKey(let failureReason):
-                    completion(.Failure(.ArgoError(failureReason)))
-                case .TypeMismatch(let failureReason):
-                    completion(.Failure(.ArgoError(failureReason)))
-                }
-            case .Failure(let (_, error)):
-                completion(.Failure(.GenericError(error)))
-            }
-        }
-        
-        return request
-    }
+//    public func searchBeer(query: String, completion: (SearchResultsResult -> Void))  {
+//        let URLString = "https://api.untappd.com/v4/search/beer"
+//        var parameters = defaultParameters
+//        parameters["q"] = query
+//        
+//        let request = Alamofire.request(.GET, URLString, parameters: parameters, encoding: .URL, headers: nil)
+//        
+//        request.responseJSON { (request, response, result) -> Void in
+//            switch result {
+//            case .Success(let JSON):
+//                guard let responseData = JSON["response"] as? [String:AnyObject] else {
+//                    let failureReason = "JSON could not be serialized because input data was nil."
+//                    let error = Error.errorWithCode(.JSONSerializationFailed, failureReason: failureReason)
+//                    completion(.Failure(.AlamofireError(error)))
+//                    break
+//                }
+//                let beer: Decoded<SearchResults> = decode(responseData)
+//                switch beer {
+//                case .Success(let searchResults):
+//                    completion(.Success(searchResults))
+//                case .MissingKey(let failureReason):
+//                    completion(.Failure(.ArgoError(failureReason)))
+//                case .TypeMismatch(let failureReason):
+//                    completion(.Failure(.ArgoError(failureReason)))
+//                }
+//            case .Failure(let (_, error)):
+//                completion(.Failure(.GenericError(error)))
+//            }
+//        }
+//        
+//        return request
+//    }
 }
 
 public enum AuthError: ErrorType {
